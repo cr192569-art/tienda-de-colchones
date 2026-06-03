@@ -1,9 +1,8 @@
-// 🚀 Cuando la página termine de cargar
+
 document.addEventListener('DOMContentLoaded', function() {
     const contenedor = document.getElementById('listaProductos');
     contenedor.innerHTML = ''; // Borramos el mensaje de "Cargando..."
 
-    //  USAMOS LOS DATOS QUE VINIERON DE productos.html
     if (productos.length === 0) {
         contenedor.innerHTML = '<p class="cargando">⚠️ No hay productos disponibles</p>';
         return;
@@ -31,11 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// 
 
-//FUNCIÓN PARA ABRIR EL FORMULARIO DE PEDIDO
+
 function abrirFormularioPedido(idProducto, nombreProducto, precioProducto) {
-    // Creamos la ventana del formulario
+    
     const ventana = document.createElement('div');
     ventana.id = 'ventanaPedido';
     ventana.style.cssText = `
@@ -52,7 +50,7 @@ function abrirFormularioPedido(idProducto, nombreProducto, precioProducto) {
         padding: 20px;
     `;
 
-    // Contenido del formulario
+
     ventana.innerHTML = `
         <div style="background-color: white; padding: 30px; border-radius: 10px; width: 100%; max-width: 450px;">
             <h3 style="color: #2c3e50; margin-bottom: 15px;">Pedido de: ${nombreProducto}</h3>
@@ -112,7 +110,7 @@ function abrirFormularioPedido(idProducto, nombreProducto, precioProducto) {
     document.body.appendChild(ventana);
 }
 
-// 🚪 FUNCIÓN PARA CERRAR EL FORMULARIO
+
 function cerrarFormulario(){
     const ventana = document.getElementById('ventanaPedido');
     if(ventana){
